@@ -1,8 +1,11 @@
 import './App.css';
+import UserForm from './components/UserForm';
 
-function App() {
+const  App=()=> {
   return (
-   <div className='container'>Hello</div>
+   <div className='container'>
+    <UserForm/>
+   </div>
   );
 }
 
