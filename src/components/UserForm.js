@@ -1,15 +1,18 @@
 import { useState } from "react"
 
-const UserForm = () => {
+const UserForm = ({addUser}) => {
    const [user, setUser] = useState({})
    const handleChange = (e)=>{
     const{name ,value} = e.target
     setUser({...user, [name]:value})
    }
-   console.log(user)
+  const handleOnSubmit = (e)=>{
+    e.preventDefault();
+    addUser(user)
+  }
   return (
     <div className="w-50 m-auto p-5 shadow-lg mt-5 rounded-3 mb-5">
-      <form action="">
+      <form action="" onSubmit={handleOnSubmit}>
         <div className="row g-2">
           <div className="col-md-3">
             <select
