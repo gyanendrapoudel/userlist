@@ -1,12 +1,25 @@
+import { useState } from "react"
+
 const UserForm = () => {
-   
+   const [user, setUser] = useState({})
+   const handleChange = (e)=>{
+    const{name ,value} = e.target
+    setUser({...user, [name]:value})
+   }
+   console.log(user)
   return (
     <div className="w-50 m-auto p-5 shadow-lg mt-5 rounded-3 mb-5">
-      <form action="" >
+      <form action="">
         <div className="row g-2">
           <div className="col-md-3">
-            <select id="inputState" className="form-select" name="gender" required>
-              <option >Gender</option>
+            <select
+              id="inputState"
+              className="form-select"
+              name="gender"
+              required
+              onChange={handleChange}
+            >
+              <option>Gender</option>
               <option value="m">Male</option>
               <option value="f">Female</option>
             </select>
@@ -19,7 +32,7 @@ const UserForm = () => {
               placeholder="User name"
               aria-label="User name"
               required
-         
+              onChange={handleChange}
             />
           </div>
           <button className="col-md-3 btn btn-primary d-grid">Add User</button>
