@@ -11,13 +11,13 @@ const  App=()=> {
     console.log(userList)
   }
   return (
-   <div className='container'>
-    <h4 className='pt-4 text-center'>User List</h4>
-    <hr />
-    <UserForm addUser={addUser}/>
-    <UserTable/>
-   </div>
-  );
+    <div className="container">
+      <h4 className="pt-4 text-center">User List</h4>
+      <hr />
+      <UserForm addUser={addUser} />
+      <UserTable userList={userList} />
+    </div>
+  )
 }
 
 export default App;
